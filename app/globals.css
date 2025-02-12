@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Cronos Pro';
+  src: url('/assets/fonts/Cronos-Pro-Light_12448.woff') format('woff'),
+    url('/assets/fonts/Cronos-Pro-Caption_12437.woff') format('woff'),
+    url('/assets/fonts/Cronos-Pro-Display_12439.woff') format('woff'),
+    url('/assets/fonts/Cronos-Pro-Semibold-Caption_12450.woff') format('woff'),
+    url('/assets/fonts/Cronos-Pro-Semibold_12456.woff') format('woff'),
+    url('/assets/fonts/Cronos-Pro-Bold-Caption_12429.woff') format('woff'), ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Cronos Pro', sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dedede;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3498db;
+  /* Hover effect */
+}
