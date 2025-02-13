@@ -39,9 +39,9 @@ const ReviewsSlider = () => {
             <Swiper
                 modules={[Autoplay]}
                 spaceBetween={20}
-                slidesPerView={1.3}
+                slidesPerView={1.4}
                 loop={true}
-                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
                 breakpoints={{
                     1024: { slidesPerView: 2 },
                 }}
