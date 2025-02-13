@@ -1,115 +1,69 @@
 "use client";
-import { useState, FormEvent, FC } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import { PrimaryButton } from "../../buttons";
 
-interface FormData {
-    fullName: string;
-    email: string;
-    company: string;
-    message: string;
-}
+const fadeUpVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
-const GetInTouch: FC = () => {
-    const [formData, setFormData] = useState<FormData>({
-        fullName: "",
-        email: "",
-        company: "",
-        message: "",
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
-    };
-
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log("Form Submitted:", formData);
-        alert("Form Submitted")
-    };
-
+const GetInTouchSection = () => {
     return (
-        <section className="relative w-full bg-primary600 text-white py-20 px-6 md:px-16">
-            <div className="relative z-10 max-w-5xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-                    <div >
-                        <h2 className="text-3xl md:text-4xl font-semibold">Get in Touch</h2>
-                        <div className="h-[2px] bg-white w-16 my-10"></div>
-                        <p className="mt-4 text-xl">For general enquiries</p>
+        <section className="relative py-20 h-screen bg-[url(/assets/landing/get-in-touch-bg.png)] bg-no-repeat bg-cover bg-bottom">
+            <video
+                className="absolute top-0 left-0 w-full h-full object-cover z-[-0]"
+                src="/assets/videos/get-in-touch.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+            />
+            <div className="absolute inset-0 flex items-center justify-center  bg-gradient-to-b from-[#F6F9F3] to-transparent bg-opacity-50 text-white text-center px-6">
 
-                        <div className="mt-6 space-y-6 text-xl">
-                            <div>
-                                <h3 className="text-lg font-semibold">Address</h3>
-                                <p>110, 16th Road, Chembur, Mumbai - 400071</p>
-                            </div>
-                            <div>
-                                <h3 className="text-lg font-semibold">Phone</h3>
-                                <p>+1 (123) 456-7890</p>
-                            </div>
-                            <div>
-                                <h3 className="text-lg font-semibold">Email</h3>
-                                <p>contact@supremegroup.com</p>
-                            </div>
+            </div>
+            <div className="w-full absolute top-0 left-0 z-9">
+            <div className="container mx-auto px-5 lg:px-40 z-9">
+                <motion.div
+                    variants={fadeUpVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    className="w-full "
+                >
+                    <h3 className="text-center font-semibold text-2xl lg:text-4xl !leading-20">
+                        Get In Touch
+                    </h3>
+                </motion.div>
+                <div className="mt-20 mx-auto max-w-2xl ">
+                    <div className="grid grid-cols-2 gap-6">
+                        <div>
+                            <input type="text" placeholder="First Name" className="w-full bg-white text-black500 py-4 px-3 rounded-xl border border-gray500 placeholder-black500 focus:outline-primary400" />
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Last Name" className="w-full bg-white text-black500 py-4 px-3 rounded-xl border border-gray500 placeholder-black500 focus:outline-primary400" />
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" className="w-full bg-white text-black500 py-4 px-3 rounded-xl border border-gray500 placeholder-black500 focus:outline-primary400" />
+                        </div>
+                        <div>
+                            <input type="number" placeholder="Contact Number" className="w-full bg-white text-black500 py-4 px-3 rounded-xl border border-gray500 placeholder-black500 focus:outline-primary400" />
+                        </div>
+                        <div className="col-span-2">
+                            <input type="text" placeholder="Subject" className="w-full bg-white text-black500 py-4 px-3 rounded-xl border border-gray500 placeholder-black500 focus:outline-primary400" />
+                        </div>
+                        <div className="col-span-2">
+                            <textarea rows={5} placeholder="Message" className="w-full bg-white text-black500 py-4 px-3 rounded-xl border border-gray500 placeholder-black500 focus:outline-primary400"></textarea>
                         </div>
                     </div>
-
-                    <div className="lg:mt-0 mt-10">
-                        <form onSubmit={handleSubmit}>
-                            <div className="mb-8">
-                                <input
-                                    type="text"
-                                    name="fullName"
-                                    value={formData.fullName}
-                                    onChange={handleChange}
-                                    className="text-white placeholder:text-opacity-90 focus-visible:border-opacity-100 border-white border-opacity-40 transition-all duration-200 tracking-wide ease-in-out border-b-2 border-solid py-2 pr-2 w-full text-base lg:text-lg placeholder:text-white font-normal bg-transparent outline-none"
-                                    placeholder="Full name"
-                                    required
-                                />
-                            </div>
-                            <div className="mb-8">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className="text-white placeholder:text-opacity-90 focus-visible:border-opacity-100 border-white border-opacity-40 transition-all duration-200 tracking-wide ease-in-out border-b-2 border-solid py-2 pr-2 w-full text-base lg:text-lg placeholder:text-white font-normal bg-transparent outline-none"
-                                    placeholder="Email"
-                                    required
-                                />
-                            </div>
-                            <div className="mb-8">
-                                <input
-                                    type="text"
-                                    name="company"
-                                    value={formData.company}
-                                    onChange={handleChange}
-                                    className="text-white placeholder:text-opacity-90 focus-visible:border-opacity-100 border-white border-opacity-40 transition-all duration-200 tracking-wide ease-in-out border-b-2 border-solid py-2 pr-2 w-full text-base lg:text-lg placeholder:text-white font-normal bg-transparent outline-none"
-                                    placeholder="Company"
-                                    required
-                                />
-                            </div>
-                            <div className="mb-8">
-                                <textarea
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    className="text-white placeholder:text-opacity-90 focus-visible:border-opacity-100 border-white border-opacity-40 transition-all duration-200 tracking-wide ease-in-out border-b-2 border-solid py-2 pr-2 w-full text-base lg:text-lg placeholder:text-white font-normal bg-transparent outline-none"
-                                    rows={4}
-                                    placeholder="Message"
-                                    required
-                                ></textarea>
-                            </div>
-                            <button
-                                type="submit"
-                                className="mt-10 w-[130px] flex justify-center gap-1 disabled:opacity-70 disabled:cursor-not-allowed relative outline-none bg-transparent rounded-full transition-all duration-700 ease-in-out hover:text-black focus:text-black hover:bg-white focus:bg-white text-white stroke-dark hover:stroke-white font-semibold border border-white lg:text-base text-sm px-8 md:px-12 py-3"
-                            >
-                                Send
-                            </button>
-                        </form>
+                    <div className="mt-7">
+                        <PrimaryButton name="Submit"/>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
     );
 };
 
-export default GetInTouch;
+export default GetInTouchSection;

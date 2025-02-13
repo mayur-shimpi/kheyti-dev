@@ -44,7 +44,7 @@ const TabNavs: React.FC<activeIndexProps> = ({activeIndex}) => {
           return (
             <div key={item.id} className={`flex items-center justify-start py-2 ${activeIndex === index ? "text-primary400" : "text-primary100" }`}>
               <div>
-                <IconComponent className={`size-12 mr-5 ${activeIndex === index ? " text-primary400" : "text-primary100" }`} /> {/* Render icon correctly */}
+                <IconComponent className={`size-12 mr-5 ${activeIndex === index ? " text-primary400" : "text-primary100" }`} /> 
               </div>
               <div>
                 <h6 className={`text-xl leading-6 ${activeIndex === index ? " font-bold" : "font-semibold" }`}>{item.name}</h6>

@@ -2,17 +2,9 @@
 import React from 'react';
 import { motion } from "framer-motion";
 
-const fadeUpZoomInVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 }, 
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        scale: 1, 
-        transition: { 
-            duration: 0.8, 
-            ease: "easeOut"
-        } 
-    },
+const slideLeftVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
 
@@ -29,7 +21,7 @@ const Tab5 = () => {
                  initial="hidden" 
                  whileInView="visible" 
                  viewport={{ once: true, amount: 0.2 }}
-                 variants={fadeUpZoomInVariants}
+                 variants={slideLeftVariants}
                 className="h-[400px]"
             >
                 <img src='/assets/our-vision/our-vision-2-min.png' alt="Our Vision" className='mx-auto h-full' />

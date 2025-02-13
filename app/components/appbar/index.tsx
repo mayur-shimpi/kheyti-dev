@@ -39,8 +39,8 @@ const menuItems = [
 
 const Appbar = () => {
     return (
-        <header className='w-full absolute top-0 left-0 z-10 bg-transparent text-center py-6 px-5 lg:px-20'>
-            <div className='bg-[#00000082] container mx-auto rounded-full px-5'>
+        <header className='w-full absolute top-0 left-0 z-10 bg-transparent text-center py-6 px-5 lg:px-10'>
+            <div className='bg-[#00000082] lg:max-w-7xl backdrop-blur-md container mx-auto rounded-full px-5'>
                 <div className='grid grid-cols-4 items-center'>
                     <div>
                         <Image
@@ -57,7 +57,7 @@ const Appbar = () => {
                                 menuItems?.map((item) => {
                                     return (
                                         <li key={item.id} >
-                                            <Link href={item.path} className='text-white px-3 py-3 hover:text-primary'>
+                                            <Link href={item.path} className='text-white text-lg px-3 py-3 hover:text-primary400'>
                                                 {item.name}
                                             </Link>
                                         </li>

@@ -3,10 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import { motion } from "framer-motion";
 import Tab1 from "./components/tab1";
-import Tab2 from "./components/tab2";
-import Tab3 from "./components/tab3";
-import Tab4 from "./components/tab4";
-import Tab5 from "./components/tab5";
 
 const tabs = ["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5"];
 
@@ -38,7 +34,6 @@ const OurVisionSection: React.FC = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Function to handle left and right button clicks
     const handlePrev = () => {
         setActiveIndex((prevIndex) => Math.max(0, prevIndex - 1));
     };
@@ -71,18 +66,14 @@ const OurVisionSection: React.FC = () => {
                             <motion.div
                                 ref={contentRef}
                                 key={activeIndex}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 1, x: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.5 }}
+                                exit={{ opacity: 1, y: -20 }}
+                                transition={{ duration: 0 }}
                                 className="text-center text-3xl font-semibold"
                             >
                                 {/* Dynamic Tab Content */}
-                                {activeIndex === 0 ? <Tab1 /> :
-                                 activeIndex === 1 ? <Tab2 /> :
-                                 activeIndex === 2 ? <Tab3 /> :
-                                 activeIndex === 3 ? <Tab4 /> :
-                                 activeIndex === 4 ? <Tab5 /> : null}
+                                <Tab1 activeIndex={activeIndex}/>
                             </motion.div>
                         </div>
                     </div>

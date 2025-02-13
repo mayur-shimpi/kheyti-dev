@@ -10,7 +10,7 @@ const fadeUpVariants = {
 
 const Tab2 = () => {
     return (
-        <section className='relative h-[130vh] py-10 lg:py-20 bg-gradient-to-b from-[#000] to-[#000]'>
+        <section className='relative h-[130vh] py-10 lg:py-20 bg-[url(/assets/landing/footprint-bg.png)] bg-no-repeat bg-cover bg-center'>
             <div className="container mx-auto px-5 lg:px-40 max-w-7xl">
                 <div className="text-center">
                     <motion.div
@@ -35,22 +35,22 @@ const Tab2 = () => {
                 </div>
                 <div className='mt-10'>
                     <div className='mb-20'>
-                        <h6 className='text-5xl text-primary font-bold'>Our Impact</h6>
+                        <h6 className='text-5xl text-primary400 font-bold'>Our Impact</h6>
                     </div>
                     <div className='mb-7'>
-                        <h6 className='text-5xl text-primary font-bold'>3-7x</h6>
+                        <h6 className='text-5xl text-primary400 font-bold'>3-7x</h6>
                         <p className='text-xl text-white font-medium mt-1 leading-5'> increase in yield</p>
                     </div>
                     <div className='mb-7'>
-                        <h6 className='text-5xl text-primary font-bold'>2-3x</h6>
+                        <h6 className='text-5xl text-primary400 font-bold'>2-3x</h6>
                         <p className='text-xl text-white font-medium mt-1 leading-5'> increase in income</p>
                     </div>
                     <div className='mb-7'>
-                        <h6 className='text-5xl text-primary font-bold'>Up to 90%</h6>
+                        <h6 className='text-5xl text-primary400 font-bold'>Up to 90%</h6>
                         <p className='text-xl text-white font-medium mt-1 leading-5'> decrease in water usage</p>
                     </div>
                     <div className='mb-7'>
-                        <h6 className='text-5xl text-primary font-bold'>Up to 90%</h6>
+                        <h6 className='text-5xl text-primary400 font-bold'>Up to 90%</h6>
                         <p className='text-xl text-white font-medium mt-1 leading-5'> reduction in pest attacks</p>
                     </div>
                 </div>
