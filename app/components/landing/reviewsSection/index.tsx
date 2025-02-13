@@ -43,7 +43,7 @@ const ReviewsSlider = () => {
                 loop={true}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 breakpoints={{
-                    1024: { slidesPerView: 2 },
+                    1024: { slidesPerView: 1.4 },
                 }}
                 className="w-full"
             >
