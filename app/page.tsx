@@ -6,6 +6,7 @@ import GreenBoxScrollingSection from "./components/landing/greenBoxScrollingSect
 import MilestonesSection from "./components/landing/milestonesSection";
 import FootprintSection from "./components/landing/footprintsSection";
 import OurGoalSection from "./components/landing/ourGoalSection";
+import OurVisionSection from "./components/landing/ourVisionSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <MilestonesSection />
       <FootprintSection />
       <OurGoalSection />
+      <OurVisionSection />
       <Footer />
     </div>
   );
