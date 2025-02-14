@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
+import { ArrowLeftIcon, ArrowRightIcon, ArrowUpIcon } from "@heroicons/react/24/solid";
 
 const data = [
     { id: 0, title: "Towards Climate-Smart Agriculture (CSA): Strategies, obstacles, and visions for a sustainable future", img: "/assets/features/img-1-min.png" },
@@ -70,13 +70,19 @@ const FeaturesSection = () => {
                                 <SwiperSlide key={index}>
                                     <div className="relative rounded-lg w-full ">
                                         <div>
-                                            <div className="h-[250px]">
+                                            <div className="h-[270px] relative">
                                                 <img src={review.img} className="h-full w-full rounded-2xl" alt="kheyti features" />
+                                                <div className="absolute bottom-0 right-0 bg-white p-1 w-14 h-14 rounded-tl-xl rounded-br-xl">
+                                                    <div className="h-full w-full flex items-center justify-center bg-primary400 rounded-lg rounded-br-2xl">
+                                                        <ArrowUpIcon className="size-6 text-white rotate-45" />
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div className="w-full lg:w-[80%] mt-2 ">
                                                 <p className="text-lg text-left text-gray700 font-medium leading-5">{review.title}</p>
                                             </div>
                                         </div>
+
                                     </div>
                                 </SwiperSlide>
                             ))}

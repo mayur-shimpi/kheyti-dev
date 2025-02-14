@@ -32,21 +32,19 @@ const fadeUpVariants = {
 
 const MilestonesSection = () => {
     return (
-        <section className="bg-white py-20 lg:py-40">
+        <section className="bg-gray200 py-20 lg:py-40">
             <div className="container mx-auto px-5 lg:px-40 max-w-6xl">
                 <div className="text-center">
                     <motion.div
                         variants={fadeUpVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.2 }} // Replay on scroll up
+                        viewport={{ once: false, amount: 0.2 }}
                         className="w-full "
                     >
-                        <h3 className='font-semibold text-2xl lg:text-5xl !leading-20 '>Milestones of change anchored in gratitude</h3>
+                        <h3 className='font-cronosRegular text-2xl lg:text-5xl !leading-20 '>Milestones of change anchored in gratitude</h3>
                     </motion.div>
                 </div>
-
-                {/* Milestone Cards */}
                 <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-10 justify-center">
                     {data.map((item, index) => (
                         <motion.div
@@ -60,8 +58,8 @@ const MilestonesSection = () => {
                         >
                             <img src={item.img} alt="milestone" className="mx-auto w-full" />
                             <div className="py-2 pl-2">
-                                <h6 className="font-semibold text-2xl leading-6">{item.title}</h6>
-                                <p className="text-black500 font-light text-lg leading-5 w-full lg:w-[85%] mt-2">
+                                <h6 className="font-cronosRegular text-xl leading-6">{item.title}</h6>
+                                <p className="text-gray600 font-light text-lg leading-5 w-full mt-2">
                                     {item.desc}
                                 </p>
                             </div>

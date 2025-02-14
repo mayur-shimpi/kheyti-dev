@@ -42,12 +42,12 @@ const TabNavs: React.FC<activeIndexProps> = ({activeIndex}) => {
         {NavItems.map((item, index) => {
           const IconComponent = item.icon;
           return (
-            <div key={item.id} className={`flex items-center justify-start py-2 ${activeIndex === index ? "text-primary400" : "text-primary100" }`}>
+            <div key={item.id} className={`flex items-center justify-start py-2 my-5 ${activeIndex === index ? "text-primary400" : "text-primary100" }`}>
               <div>
-                <IconComponent className={`size-12 mr-5 ${activeIndex === index ? " text-primary400" : "text-primary100" }`} /> 
+                <IconComponent className={`size-12 mr-3 ${activeIndex === index ? " text-primary400" : "text-primary100" }`} /> 
               </div>
               <div>
-                <h6 className={`text-xl leading-6 ${activeIndex === index ? " font-bold" : "font-semibold" }`}>{item.name}</h6>
+                <h6 className={`text-lg leading-4 ${activeIndex === index ? " font-cronosRegular" : "font-cronosRegular" }`}>{item.name}</h6>
               </div>
             </div>
           );

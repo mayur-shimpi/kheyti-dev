@@ -9,7 +9,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        cronos: ['"Cronos Pro"', 'sans-serif'],
+        cronosMedium: ['Cronos Pro Caption', 'sans-serif'],
+        cronosRegular: ['Cronos Pro Regular', 'sans-serif'],
+        cronosLight: ['Cronos Pro Light', 'sans-serif'],
+        cronosExtraLight: ['Cronos Pro Light Subhead', 'sans-serif'],
+        cronosSemiBold: ['Cronos Pro Semibold', 'sans-serif'],
+        cronosBold: ['Cronos Pro Bold', 'sans-serif'],
       },
       colors: {
         'primary' : "#489A4B",
@@ -19,6 +24,7 @@ export default {
         'primary600': "#006abc",
         'black500' : "#030303",
         'black600' : "#080808",
+        'gray100':"#bebebe",
         'gray200':"#F6F9F3",
         'gray300': "#FAFAFA",
         'gray400': "#D9D9D9",

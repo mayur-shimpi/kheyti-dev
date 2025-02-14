@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Tab1 from "./components/tab1";
 import Tab2 from "./components/tab2";
+import Tab3 from "./components/tab3";
 
-const tabs = ["Tab 1", "Tab 2"];
+const tabs = ["Tab 1", "Tab 2", "Tab 3"];
 
 const FootPrintSection: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -31,26 +32,15 @@ const FootPrintSection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative h-[200vh] ">
+        <section ref={sectionRef} className="relative h-[300vh] ">
             <div className="sticky top-0 ">
-                {/* <div className="absolute top-1/2 left-10 -translate-y-1/2 flex flex-col gap-4">
-                    {tabs.map((tab, index) => (
-                        <motion.div
-                            key={index}
-                            className={`cursor-pointer rounded-full transition-all ${index === activeIndex ? "bg-primary400 text-white w-4 h-10" : "bg-gray400 text-gray-300 w-4 h-4"
-                                }`}
-                        >
-
-                        </motion.div>
-                    ))}
-                </div> */}
                 <motion.div
                     ref={contentRef}
                     key={activeIndex}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 0 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
+                    exit={{ opacity: 0, y: 0 }}
+                    transition={{ duration: 0 }}
                 >
                     {
                         activeIndex === 0 ?
@@ -58,7 +48,10 @@ const FootPrintSection: React.FC = () => {
                             :
                             activeIndex === 1 ?
                                 <Tab2 />
-                                : null
+                                :
+                                activeIndex === 2 ?
+                                    <Tab3 />
+                                    : null
                     }
                 </motion.div>
             </div>

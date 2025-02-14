@@ -40,7 +40,7 @@ const menuItems = [
 const Appbar = () => {
     return (
         <header className='w-full absolute top-0 left-0 z-10 bg-transparent text-center py-6 px-5 lg:px-10'>
-            <div className='bg-[#00000082] lg:max-w-7xl backdrop-blur-md container mx-auto rounded-full px-5'>
+            <div className='bg-[#00000082] lg:max-w-7xl backdrop-blur-md container mx-auto rounded-full px-3'>
                 <div className='grid grid-cols-4 items-center'>
                     <div>
                         <Image
@@ -48,7 +48,7 @@ const Appbar = () => {
                             alt='Logo'
                             width={200}
                             height={80}
-                            className='h-[60px] w-[180px] lg:h-[70px] lg:w-[150px]'
+                            className='h-[50px] w-[100px] lg:h-[60px] lg:w-[120px] lg:ml-2'
                         />
                     </div>
                     <div className='col-span-2'>
@@ -57,7 +57,7 @@ const Appbar = () => {
                                 menuItems?.map((item) => {
                                     return (
                                         <li key={item.id} >
-                                            <Link href={item.path} className='text-white text-lg px-3 py-3 hover:text-primary400'>
+                                            <Link href={item.path} className='text-white text-lg px-3 py-3 whitespace-nowrap hover:text-primary400'>
                                                 {item.name}
                                             </Link>
                                         </li>

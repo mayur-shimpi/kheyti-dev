@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import TabNavs from "./components/tabNavs";
 import Tab1 from "./components/tab1";
 import Tab2 from "./components/tab2";
@@ -18,10 +18,6 @@ const GreenBoxScrollingSection: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    //   const { scrollYProgress } = useScroll({
-    //     target: sectionRef,
-    //     offset: ["start start", "end start"],
-    //   });
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,10 +28,8 @@ const GreenBoxScrollingSection: React.FC = () => {
             const viewportHeight = window.innerHeight;
 
             if (sectionTop <= 0 && Math.abs(sectionTop) < sectionHeight - viewportHeight) {
-                // Calculate the new active tab index
                 const progress = Math.abs(sectionTop) / (sectionHeight - viewportHeight);
                 const newIndex = Math.min(tabs.length - 1, Math.floor(progress * tabs.length));
-
                 setActiveIndex(newIndex);
             }
         };
@@ -46,22 +40,18 @@ const GreenBoxScrollingSection: React.FC = () => {
 
     return (
         <section ref={sectionRef} className="relative h-[400vh] ">
-
-            {/* Fixed Container */}
-            <div className="sticky top-0 h-screen py-10 lg:py-20 bg-gradient-to-b from-[#FFFFFE] to-[#FFFFEA]">
+            <div className="sticky top-0 h-screen py-10 lg:py-10 bg-gradient-to-b from-[#FFFFFE] to-[#FFFFEA]">
                 <div className="text-center">
                     <motion.div
                         variants={fadeUpVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, amount: 0.2 }} // Replay on scroll up
+                        viewport={{ once: false, amount: 0.2 }}
                         className="w-full "
                     >
-                        <h3 className='font-semibold text-2xl lg:text-5xl !leading-20 '>Greenhouse-in-a-Box</h3>
+                        <h3 className='font-cronosRegular text-2xl lg:text-5xl !leading-20 '>Greenhouse-in-a-Box</h3>
                     </motion.div>
                 </div>
-
-                {/* Fixed Tabs on Left */}
                 <div className="absolute top-1/2 left-10 -translate-y-1/2 flex flex-col gap-4">
                     {tabs.map((tab, index) => (
                         <motion.div
@@ -69,14 +59,12 @@ const GreenBoxScrollingSection: React.FC = () => {
                             className={`cursor-pointer rounded-full transition-all ${index === activeIndex ? "bg-primary400 text-white w-4 h-10" : "bg-gray400 text-gray-300 w-4 h-4"
                                 }`}
                         >
-
                         </motion.div>
                     ))}
                 </div>
 
-                <div className="container mx-auto mt-20 lg:mt-26 px-5 md:lg:px-20 lg:px-40">
-                    {/* Changing Content */}
-                    <div className="grid grid-cols-4 gap-8">
+                <div className="container mx-auto lg:max-w-6xl mt-20 lg:mt-26 px-5 ">
+                    <div className="grid grid-cols-4 gap-1 items-center">
                         <div>
                             <TabNavs activeIndex={activeIndex} />
                         </div>
@@ -84,13 +72,12 @@ const GreenBoxScrollingSection: React.FC = () => {
                             <motion.div
                                 ref={contentRef}
                                 key={activeIndex}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 0 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
+                                exit={{ opacity: 0, y: 0 }}
                                 transition={{ duration: 0.5 }}
                                 className="text-center text-3xl font-semibold"
                             >
-                                {/* {tabs[activeIndex]} Content */}
                                 {
                                     activeIndex === 0 ?
                                         <Tab1 />
@@ -105,11 +92,9 @@ const GreenBoxScrollingSection: React.FC = () => {
                                                     <Tab4 />
                                                     : null
                                 }
-
                             </motion.div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
