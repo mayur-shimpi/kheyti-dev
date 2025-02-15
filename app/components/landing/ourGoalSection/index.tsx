@@ -23,7 +23,6 @@ const fadeInVariants = {
 const OurGoalSection = () => {
     return (
         <section className="relative h-[117vh] py-20 lg:py-10 bg-[url('/assets/landing/our-goal-bg.png')] bg-no-repeat bg-cover bg-top ">
-            {/* <div className='absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#fff] to-[#f0f8ff00] z-[1]'></div> */}
             <div className='container mx-auto max-w-5xl px-5 lg:px-20 '>
                 <div className="text-center">
                     <motion.div
@@ -45,7 +44,7 @@ const OurGoalSection = () => {
                         viewport={{ once: false, amount: 0.2 }}
                         className="w-full z-8"
                     >
-                        <h3 className='text-black500 text-center font-semibold text-2xl lg:text-4xl !leading-20 '>Make <span className='text-primary500'>1 million</span> farmers successful with <br/> climate-resilient innovations by</h3>
+                        <h3 className='text-gray800 text-center font-semibold text-2xl lg:text-4xl !leading-20 '>Make <span className='text-primary500'>1 million</span> farmers successful with <br/> climate-resilient innovations by</h3>
                     </motion.div>
                     <motion.div
                         variants={fadeDownVariants}
@@ -54,7 +53,7 @@ const OurGoalSection = () => {
                         viewport={{ once: false, amount: 0.2 }}
                         className="w-full z-1 mt-20"
                     >
-                        <h3 className='text-black500 text-center font-medium text-4xl lg:text-[260px] !leading-20 '>2033</h3>
+                        <h3 className='text-gray800 text-center font-medium text-4xl lg:text-[260px] !leading-20 '>2033</h3>
                     </motion.div>
                 </div>
 

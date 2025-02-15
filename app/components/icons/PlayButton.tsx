@@ -4,10 +4,10 @@ const HandMaintainSupport: React.FC<React.SVGProps<SVGSVGElement>> = (props) => 
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="46"
-            height="46"
-            viewBox="0 0 46 46"
-            fill="currentColor"
+            width="101"
+            height="101"
+            viewBox="0 0 101 101"
+            fill="none"
             {...props}
         >
             <g filter="url(#filter0_d_56_9)">

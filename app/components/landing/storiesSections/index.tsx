@@ -76,7 +76,7 @@ const StoriesSection = () => {
                         <SwiperSlide key={index}>
                             <div className="relative bg-white rounded-lg shadow-sm border border-gray300 w-full ">
                                 <div>
-                                    <div className="h-[350px]">
+                                    <div className="h-[330px]">
                                     <img src={review.img} className="h-full w-full rounded-lg" alt="kheyti review" />
                                     </div>
                                     <div className="w-full absolute left-0 bottom-0 py-8 px-2">

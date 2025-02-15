@@ -53,13 +53,13 @@ const OurVisionSection: React.FC = () => {
                         viewport={{ once: false, amount: 0.2 }}
                         className="w-full"
                     >
-                        <h3 className="font-semibold text-2xl lg:text-5xl !leading-20">
+                        <h3 className="font-cronosRegular text-2xl lg:text-5xl !leading-20">
                             Our vision for change, translated into voices of impact
                         </h3>
                     </motion.div>
                 </div>
 
-                <div className="container mx-auto mt-20 lg:mt-26 px-5 md:lg:px-20 lg:px-40">
+                <div className="container mx-auto lg:max-w-7xl  mt-20 lg:mt-26 px-5 md:lg:px-20 lg:px-40">
                     {/* Changing Content */}
                     <div className="grid grid-cols-4">
                         <div className="col-span-4">
